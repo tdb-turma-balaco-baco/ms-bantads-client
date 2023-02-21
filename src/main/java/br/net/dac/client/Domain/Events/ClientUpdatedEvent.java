@@ -6,12 +6,15 @@ public class ClientUpdatedEvent extends DomainEvent {
     private String name;
     private String cpf;
     private String email;
-    public ClientUpdatedEvent(String name, String cpf, String email) {
+    private Double wage;
+    
+    public ClientUpdatedEvent(String name, String cpf, String email, Double wage) {
         this.name = name;
         this.cpf = cpf;
         this.email = email;
+        this.wage = wage;
     }
-
+    
     public String getName() {
         return name;
     }
@@ -31,5 +34,11 @@ public class ClientUpdatedEvent extends DomainEvent {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public Double getWage() {
+        return wage;
+    }
+    public void setWage(Double wage) {
+        this.wage = wage;
     }
 }

@@ -70,7 +70,7 @@ public class ClientService implements IClientService {
         
         _clientRepository.saveAndFlush(client);
 
-        ClientUpdatedEvent eventDomain = new ClientUpdatedEvent(event.getName(), event.getCpf(), event.getEmail());
+        ClientUpdatedEvent eventDomain = new ClientUpdatedEvent(event.getName(), event.getCpf(), event.getEmail(), event.getWage());
         _messageSender.sendMessage(eventDomain);
 
     }
@@ -86,7 +86,7 @@ public class ClientService implements IClientService {
     public ClientResult findOneByCpf(String cpf) {
         Client client = _clientRepository.findOneByCpf(cpf);
         if(client == null) throw new ClientNotFoundException();
-        
+
         ClientResult clientResult = mapEntityToDTO(client);
         return clientResult;
 
