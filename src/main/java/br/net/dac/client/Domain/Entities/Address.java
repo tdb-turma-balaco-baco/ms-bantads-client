@@ -1,21 +1,32 @@
-package br.net.dac.client.Application.Services.Client.Result;
+package br.net.dac.client.Domain.Entities;
 
-import br.net.dac.client.Application.Services.Client.Model.Adress;
+import jakarta.persistence.*;
 
-public class AdressResult {
+@Entity
+@Table(name = "address")
+public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "type")
     private String type;
 
+    @Column(name = "street")
     private String street;
 
+    @Column(name = "number")
     private String number;
 
+    @Column(name = "complement")
     private String complement;
 
+    @Column(name = "cep")
     private String cep;
-
+    @Column(name = "city")
     private String city;
-
+    @Column(name = "state")
     private String state;
 
     public String getType() {
@@ -68,19 +79,19 @@ public class AdressResult {
         return state;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public AdressResult(Long id, String type, String street, String number, String complement, String cep, String city, String state) {
+    public Address(String type, String street, String number, String complement, String cep, String city, String state) {
         this.type = type;
         this.street = street;
         this.number = number;
@@ -88,10 +99,8 @@ public class AdressResult {
         this.cep = cep;
         this.city = city;
         this.state = state;
-        this.id = id;
     }
-    public AdressResult() {
+    public Address() {
 
     }
-
 }

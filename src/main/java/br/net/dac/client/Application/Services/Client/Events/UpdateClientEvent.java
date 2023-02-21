@@ -1,6 +1,6 @@
 package br.net.dac.client.Application.Services.Client.Events;
 
-import br.net.dac.client.Application.Services.Client.Model.Adress;
+import br.net.dac.client.Application.Services.Client.Model.Address;
 
 public class UpdateClientEvent {
     private Long clientId;
@@ -9,15 +9,15 @@ public class UpdateClientEvent {
     private String cpf;
     private String phone;
     private double wage;
-
-    private Adress clientAdress;
-    public UpdateClientEvent(String name, String email, String cpf, String phone, double wage, Adress adress) {
+    private Address address;
+    
+    public UpdateClientEvent(String name, String email, String cpf, String phone, double wage, Address address) {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
         this.phone = phone;
         this.wage = wage;
-        this.clientAdress = adress;
+        this.address = address;
     }
     public UpdateClientEvent () {
 
@@ -65,10 +65,11 @@ public class UpdateClientEvent {
     public void setClientId(Long clientId) {
         this.clientId = clientId;
     }
-    public Adress getClientAdress() {
-        return this.clientAdress;
+    public Address getAddress() {
+        return address;
     }
-    public void setClientAdress(Adress clientAdress) {
-        this.clientAdress = clientAdress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
+
 }

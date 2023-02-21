@@ -1,33 +1,19 @@
-package br.net.dac.client.Domain.Entities;
+package br.net.dac.client.Application.Services.Client.Result;
 
-import jakarta.persistence.*;
-
-
-@Entity
-@Table(name = "adress")
-public class Adress {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+public class AddressResult {
     private Long id;
-
-    @Column(name = "type")
     private String type;
 
-    @Column(name = "street")
     private String street;
 
-    @Column(name = "number")
     private String number;
 
-    @Column(name = "complement")
     private String complement;
 
-    @Column(name = "cep")
     private String cep;
-    @Column(name = "city")
+
     private String city;
-    @Column(name = "state")
+
     private String state;
 
     public String getType() {
@@ -80,19 +66,19 @@ public class Adress {
         return state;
     }
 
-    public Long getId() {
-        return id;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public Long getId() {
+        return id;
     }
 
-    public Adress(String type, String street, String number, String complement, String cep, String city, String state) {
+    public AddressResult(Long id, String type, String street, String number, String complement, String cep, String city, String state) {
         this.type = type;
         this.street = street;
         this.number = number;
@@ -100,8 +86,10 @@ public class Adress {
         this.cep = cep;
         this.city = city;
         this.state = state;
+        this.id = id;
     }
-    public Adress() {
+    public AddressResult() {
 
     }
+
 }

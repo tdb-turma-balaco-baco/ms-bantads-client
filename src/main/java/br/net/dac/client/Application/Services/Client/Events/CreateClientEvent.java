@@ -1,7 +1,7 @@
 package br.net.dac.client.Application.Services.Client.Events;
 
 
-import br.net.dac.client.Application.Services.Client.Model.Adress;
+import br.net.dac.client.Application.Services.Client.Model.Address;
 
 public class CreateClientEvent {
     private String name;
@@ -9,18 +9,15 @@ public class CreateClientEvent {
     private String cpf;
     private String phone;
     private double wage;
+    private Address address;
 
-
-
-    private Adress clientAdress;
-
-    public CreateClientEvent(String name, String email, String cpf, String phone, double wage, Adress clientAdress) {
+    public CreateClientEvent(String name, String email, String cpf, String phone, double wage, Address address) {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
         this.phone = phone;
         this.wage = wage;
-        this.clientAdress = clientAdress;
+        this.address = address;
     }
     public CreateClientEvent () {
 
@@ -60,12 +57,12 @@ public class CreateClientEvent {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public Adress getClientAdress() {
-        return this.clientAdress;
+    public Address getAddress() {
+        return address;
     }
-    public void setClientAdress(Adress clientAdress) {
-        this.clientAdress = clientAdress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
+    
 }
 

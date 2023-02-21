@@ -3,7 +3,7 @@ package br.net.dac.client.Infrastructure.Services.Messaging.Configuration;
 import br.net.dac.client.Application.Services.Client.Events.CreateClientEvent;
 import br.net.dac.client.Application.Services.Client.Events.UpdateClientEvent;
 import br.net.dac.client.Domain.Events.ClientCreatedEvent;
-import br.net.dac.client.Domain.Events.ClientUpdated;
+import br.net.dac.client.Domain.Events.ClientUpdatedEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -58,7 +58,7 @@ public class RabbitConfig {
 
 
         idClassMapping.put("ClientCreatedEvent", ClientCreatedEvent.class);
-        idClassMapping.put("ClientUpdated", ClientUpdated.class);
+        idClassMapping.put("ClientUpdatedEvent", ClientUpdatedEvent.class);
 
         return idClassMapping;
     }

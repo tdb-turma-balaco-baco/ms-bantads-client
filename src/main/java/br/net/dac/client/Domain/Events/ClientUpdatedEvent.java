@@ -2,11 +2,11 @@ package br.net.dac.client.Domain.Events;
 
 import br.net.dac.client.Domain.Events.Common.DomainEvent;
 
-public class ClientUpdated extends DomainEvent {
+public class ClientUpdatedEvent extends DomainEvent {
     private String name;
     private String cpf;
     private String email;
-    public ClientUpdated(String name, String cpf, String email) {
+    public ClientUpdatedEvent(String name, String cpf, String email) {
         this.name = name;
         this.cpf = cpf;
         this.email = email;

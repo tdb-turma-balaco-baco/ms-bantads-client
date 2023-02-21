@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "client")
-
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +15,7 @@ public class Client {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", unique = true)
     private String cpf;
 
     @Column(name = "phone")
@@ -26,10 +25,10 @@ public class Client {
     private double wage;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "adressId")
-    private Adress clientAdress;
+    @JoinColumn(name = "addressId")
+    private Address clientAdress;
 
-    public Client(String name, String email, String cpf, String phone, double wage, Adress clientAdress) {
+    public Client(String name, String email, String cpf, String phone, double wage, Address clientAdress) {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
@@ -91,12 +90,14 @@ public class Client {
         this.id = id;
     }
 
-    public Adress getClientAdress() {
-        return this.clientAdress;
+    public Address getClientAdress() {
+        return clientAdress;
     }
-    public void setClientAdress(Adress clientAdress) {
+
+    public void setClientAdress(Address clientAdress) {
         this.clientAdress = clientAdress;
     }
+    
 
 }
 

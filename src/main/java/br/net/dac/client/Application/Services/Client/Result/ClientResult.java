@@ -1,7 +1,5 @@
 package br.net.dac.client.Application.Services.Client.Result;
 
-import br.net.dac.client.Application.Services.Client.Model.Adress;
-
 public class ClientResult {
     private Long id;
     private String name;
@@ -9,9 +7,9 @@ public class ClientResult {
     private String cpf;
     private String phone;
     private double wage;
-
-    private AdressResult clientAdress;
-    public ClientResult(Long id, String name, String email, String cpf, String phone, double wage, AdressResult clientAdress) {
+    private AddressResult clientAdress;
+    
+    public ClientResult(Long id, String name, String email, String cpf, String phone, double wage, AddressResult clientAdress) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -70,10 +68,10 @@ public class ClientResult {
     public Double getWage() {
         return wage;
     }
-    public AdressResult getClientAdress() {
+    public AddressResult getClientAdress() {
         return this.clientAdress;
     }
-    public void setClientAdress(AdressResult clientAdress) {
+    public void setClientAdress(AddressResult clientAdress) {
         this.clientAdress = clientAdress;
     }
 }

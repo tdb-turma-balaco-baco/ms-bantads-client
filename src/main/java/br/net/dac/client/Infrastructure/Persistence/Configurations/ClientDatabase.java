@@ -50,7 +50,7 @@ public class ClientDatabase {
 
         return builder
                 .dataSource(dataSource)
-                .packages("br.net.dac.manager.Domain.Entities")
+                .packages("br.net.dac.client.Domain.Entities")
                 .properties(properties)
                 .build();
     }

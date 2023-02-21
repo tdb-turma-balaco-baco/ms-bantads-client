@@ -1,9 +1,7 @@
 package br.net.dac.client.Application.Services.Client.Model;
 
 
-public class Adress {
-
-
+public class Address {
     private String type;
 
     private String street;
@@ -72,7 +70,7 @@ public class Adress {
         this.state = state;
     }
 
-    public Adress(String type, String street, String number, String complement, String cep, String city, String state) {
+    public Address(String type, String street, String number, String complement, String cep, String city, String state) {
         this.type = type;
         this.street = street;
         this.number = number;
@@ -81,7 +79,7 @@ public class Adress {
         this.city = city;
         this.state = state;
     }
-    public Adress() {
+    public Address() {
 
     }
 }
